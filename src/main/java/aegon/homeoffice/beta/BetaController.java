@@ -1,6 +1,7 @@
 package aegon.homeoffice.beta;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
@@ -32,6 +33,23 @@ public class BetaController {
 		modelMap.put("homeOffice", homeOffice);
 
 		return "betaView";
+
+	}
+
+	@PostMapping("/goToDetails")
+	public String goToDetails(ModelMap modelMap) {
+
+		List<String> weekdays = new ArrayList<>();
+		weekdays.add("Monday");
+		weekdays.add("Tuesday");
+		weekdays.add("Wednesday");
+		weekdays.add("Thursday");
+		weekdays.add("Friday");
+		modelMap.put("weekdays", weekdays);
+
+		modelMap.put("homeOffice", homeOffice);
+
+		return "schedule";
 
 	}
 }

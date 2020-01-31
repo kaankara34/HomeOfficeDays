@@ -29,29 +29,50 @@
 			src="https://cdn.freebiesupply.com/logos/large/2x/aegon-logo-png-transparent.png"
 			width="250" height="250" alt="This is an image" />
 
-		<form method="post" action="goToDetails">
-			<table class="table table-bordered table-dark">
-				<thead>
+		<table class="table table-bordered table-dark">
+			<thead>
+				<tr>
+					<th scope="col">Monday</th>
+					<th scope="col">Tuesday</th>
+					<th scope="col">Wednesday</th>
+					<th scope="col">Thursday</th>
+					<th scope="col">Friday</th>
+				</tr>
+			</thead>
+			<tbody>
+
+				<c:forEach var="home" items="${homeOffice}">
 					<tr>
-						<th scope="col">User Name</th>
-						<th scope="col">User Surname</th>
-						<th scope="col">HomeOffice Day</th>
+						<td><c:if test="${home.chosenDay == 'Monday' }">
+					${home.userName}
+					</c:if></td>
+
+						<td><c:if test="${home.chosenDay == 'Tuesday' }">
+					${home.userName}
+					</c:if></td>
+
+						<td><c:if test="${home.chosenDay == 'Wednesday' }">
+					${home.userName}
+					</c:if></td>
+
+						<td><c:if test="${home.chosenDay == 'Thursday' }">
+					${home.userName}
+					</c:if></td>
+
+						<td><c:if test="${home.chosenDay == 'Friday' }">
+					${home.userName}
+					</c:if></td>
+
 					</tr>
-				</thead>
-				<tbody>
-					<tr>
-						<c:forEach var="home" items="${homeOffice}">
-							<tr>
-								<td>${home.userName}</td>
-								<td>${home.userSurname}</td>
-								<td>${home.chosenDay}</td>
-							</tr>
-						</c:forEach>
-					</tr>
-				</tbody>
-			</table>
-			<br /> <input type="submit" value="GO">
+				</c:forEach>
+			</tbody>
+		</table>
+
+		<form method="get" action="getForm">
+			<input type="submit" value="HOMEPAGE">
 		</form>
 	</div>
 </body>
+
+
 </html>

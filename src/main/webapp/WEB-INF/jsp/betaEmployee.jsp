@@ -15,19 +15,30 @@
 </head>
 </head>
 <body>
-	<img
-		src="https://cdn.freebiesupply.com/logos/large/2x/aegon-logo-png-transparent.png"
-		width="250" height="250" alt="This is an image" />
-	<h2>Please select a day for HomeOffice</h2>
-	<form method="post" action="saveDetails">
-		User Name : <input type="text" name="userName" /><br /> User Surname
-		: <input type="text" name="userSurname"><br /> <input
-			type="radio" name="chosenDay" value="Monday">Monday<br>
-		<input type="radio" name="chosenDay" value="Tuesday">Tuesday<br>
-		<input type="radio" name="chosenDay" value="Wednesday">Wednesday<br> 
-		<input type="radio" name="chosenDay" value="Thursday">Thursday<br>
-		<input type="radio" name="chosenDay" value="Friday">Friday<br>
-		<input type="submit" value="Submit">
-	</form>
+	<div align="center">
+		<img
+			src="https://cdn.freebiesupply.com/logos/large/2x/aegon-logo-png-transparent.png"
+			width="250" height="250" alt="This is an image" />
+		<h2>Please select a day for HomeOffice</h2>
+		<form method="post" action="saveDetails">
+			<h4>
+				User Name :
+				<h4>
+					<input type="text" name="userName" required="required" /> <br />
+					<h4>User Surname:</h4>
+					<input type="text" name="userSurname" required="required">
+					<br /> <br /> <br />
+					<h4>HomeOffice Day:</h4>
+					<select name="chosenDay" id="day-select" required="required">
+						<option value="">--Please choose a day for HomeOffice--</option>
+						<option value="Monday">Monday</option>
+						<option value="Tuesday">Tuesday</option>
+						<option value="Wednesday">Wednesday</option>
+						<option value="Thursday">Thursday</option>
+						<option value="Friday">Friday</option>
+					</select> <br /> <br /> <input type="submit" value="Submit">
+		</form>
+	</div>
 </body>
+
 </html>
